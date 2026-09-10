@@ -32,11 +32,11 @@
       align-items:center;
       justify-content:center;
       padding:48px 20px;
+      color:#fff;
       background:
-        radial-gradient(circle at top right, rgba(15,118,110,.11), transparent 32%),
-        radial-gradient(circle at bottom left, rgba(176,137,79,.12), transparent 36%),
-        linear-gradient(180deg,#fbfaf8 0%,#f2efe9 100%);
-      border-bottom:1px solid var(--line);
+        linear-gradient(110deg,rgba(10,25,29,.70),rgba(10,25,29,.52)),
+        url("reunion-street.jpg") center 55% / cover no-repeat;
+      border-bottom:1px solid rgba(255,255,255,.15);
     }
     .hero-inner{max-width:920px;text-align:center}
     .eyebrow{
@@ -156,14 +156,30 @@
       background:rgba(255,255,255,.13);color:#fff;
       border:1px solid rgba(255,255,255,.35);
     }
-    .photo-section{padding:64px 20px 0}
-    .photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-    .photo-card{margin:0;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.035)}
-    .photo-card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-    .photo-card figcaption{padding:14px 20px;color:var(--muted);font-size:.92rem}
+    .hero h1{text-shadow:0 3px 24px rgba(0,0,0,.28)}
+    .hero .eyebrow{color:#f3dfb6}
+    .hero p,.hero .place{color:rgba(255,255,255,.95)}
+    .hero .date{color:#fff}
+    .hero .btn-secondary{color:var(--accent2)}
+    .hero .btn{box-shadow:0 4px 18px rgba(0,0,0,.16)}
+    .memory-section{
+      min-height:480px;
+      display:flex;
+      align-items:center;
+      padding:100px 20px;
+      color:#fff;
+      text-align:center;
+      background:
+        linear-gradient(100deg,rgba(10,30,43,.73),rgba(10,30,43,.58)),
+        url("reunion-bridge.jpg") center 52% / cover no-repeat;
+    }
+    .memory-copy{width:100%;max-width:780px}
+    .memory-copy .label{color:#f3dfb6}
+    .memory-copy h2{font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.5;margin:16px 0 24px;text-shadow:0 2px 16px rgba(0,0,0,.25)}
+    .memory-copy p{max-width:650px;margin:0 auto;color:rgba(255,255,255,.95)}
     @media(max-width:720px){
-      .photo-section{padding:42px 18px 0}
-      .photo-grid{grid-template-columns:1fr;max-width:515px;margin:0 auto;gap:20px}
+      .hero{background-position:center,56% center}
+      .memory-section{min-height:460px;padding:76px 22px;background-position:center,42% center}
     }
     @media(max-width:720px){
       .grid,.steps{grid-template-columns:1fr}
@@ -194,18 +210,7 @@
 </section>
 
 
-<section class="photo-section" aria-label="懐かしい風景">
-  <div class="wrap photo-grid">
-    <figure class="photo-card">
-      <img src="reunion-street.jpg" alt="木造の家並みが続く昔ながらの通り" width="1575" height="1050" loading="lazy" decoding="async">
-      <figcaption>懐かしい町並み</figcaption>
-    </figure>
-    <figure class="photo-card">
-      <img src="reunion-bridge.jpg" alt="街の屋根越しに広がる海と大きな吊り橋" width="515" height="388" loading="lazy" decoding="async">
-      <figcaption>海と橋のある風景</figcaption>
-    </figure>
-  </div>
-</section>
+
 
 <section class="section">
   <div class="wrap">
@@ -320,16 +325,14 @@
   </div>
 </section>
 
-<section class="section" style="padding-top:30px;">
-  <div class="wrap">
-    <div class="card" style="text-align:center;">
-      <div class="label">MESSAGE</div>
-      <h2>40歳の節目に、また集まろう。</h2>
-      <p class="muted" style="max-width:650px;margin:0 auto;">
+<section class="section memory-section">
+  <div class="wrap memory-copy">
+    <div class="label">MESSAGE</div>
+    <h2>40歳の節目に、また集まろう。</h2>
+    <p>
         中学校を卒業してから、それぞれ違う場所で過ごしてきました。
         せっかくの節目なので、懐かしい話をしながら、今の自分たちでもう一度集まりましょう。
       </p>
-    </div>
   </div>
 </section>
 
@@ -364,5 +367,6 @@ async function copyUrl(){
 
 </body>
 </html>
+
 
 
