@@ -156,6 +156,15 @@
       background:rgba(255,255,255,.13);color:#fff;
       border:1px solid rgba(255,255,255,.35);
     }
+    .photo-section{padding:64px 20px 0}
+    .photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .photo-card{margin:0;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.035)}
+    .photo-card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+    .photo-card figcaption{padding:14px 20px;color:var(--muted);font-size:.92rem}
+    @media(max-width:720px){
+      .photo-section{padding:42px 18px 0}
+      .photo-grid{grid-template-columns:1fr;max-width:515px;margin:0 auto;gap:20px}
+    }
     @media(max-width:720px){
       .grid,.steps{grid-template-columns:1fr}
       .section{padding:62px 18px}
@@ -181,6 +190,20 @@
       <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd5WgxF5cpRwUkypZQ-KQUIOlLjuwu4s1sMsvuMfxToYQyFIQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">参加希望・出欠を登録</a>
       <a class="btn btn-secondary" href="#share">同級生にシェアする</a>
     </div>
+  </div>
+</section>
+
+
+<section class="photo-section" aria-label="懐かしい風景">
+  <div class="wrap photo-grid">
+    <figure class="photo-card">
+      <img src="reunion-street.jpg" alt="木造の家並みが続く昔ながらの通り" width="1575" height="1050" loading="lazy" decoding="async">
+      <figcaption>懐かしい町並み</figcaption>
+    </figure>
+    <figure class="photo-card">
+      <img src="reunion-bridge.jpg" alt="街の屋根越しに広がる海と大きな吊り橋" width="515" height="388" loading="lazy" decoding="async">
+      <figcaption>海と橋のある風景</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -341,4 +364,5 @@ async function copyUrl(){
 
 </body>
 </html>
+
 
