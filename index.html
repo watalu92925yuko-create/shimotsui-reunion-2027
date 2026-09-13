@@ -246,6 +246,12 @@
     <div class="notice">
       出欠の回答期限は2026年9月30日です。会場・会費の詳細は、決まり次第お知らせします。
     </div>
+
+    <div class="card" style="max-width:620px;margin:24px auto 0;text-align:center;">
+      <div class="label">ORGANIZER</div>
+      <div class="value">幹事：浦川 航</div>
+      <a href="mailto:watalu.9.29.2.5.yuko@gmail.com" style="color:var(--accent);text-decoration:underline;overflow-wrap:anywhere;">watalu.9.29.2.5.yuko@gmail.com</a>
+    </div>
   </div>
 </section>
 
@@ -264,7 +270,7 @@
       <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd5WgxF5cpRwUkypZQ-KQUIOlLjuwu4s1sMsvuMfxToYQyFIQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">参加希望・出欠を登録</a>
       <p class="muted" style="font-size:.9rem;">Googleフォームが別のタブで開きます。</p>
       <p class="muted" style="font-size:.9rem;margin-top:18px;">
-        氏名・連絡先などの回答はGoogleフォームで受け付け、幹事のみが確認します。回答は非公開とし、同窓会の準備・連絡のために利用します。公開サイトや公開GitHubリポジトリには保存・掲載しません。
+        氏名・メールアドレスまたはLINE IDなどの回答はGoogleフォームで受け付け、幹事のみが確認します。サイト更新のご連絡と同窓会の準備に利用します。回答内容は公開サイトや公開GitHubリポジトリには保存・掲載しません。
       </p>
     </div>
   </div>
@@ -303,10 +309,6 @@
     <h2 class="section-title">よくある質問</h2>
     <div class="faq">
       <details>
-        <summary>一人で参加しても大丈夫ですか？</summary>
-        <p>もちろん大丈夫です。久しぶりの再会を楽しむ場なので、気軽に参加してください。</p>
-      </details>
-      <details>
         <summary>予定がまだ分かりません。</summary>
         <p>「未定」を選んで回答できます。現時点でのご予定をお知らせください。</p>
       </details>
@@ -342,26 +344,29 @@
 
 <footer>
   下津井中学校 同窓会 2026<br>
-  2026年12月26日（土）18:00〜 ／ 会場は参加人数が決まり次第決定
+  2026年12月26日（土）18:00〜 ／ 会場は参加人数が決まり次第決定<br>
+  幹事：浦川 航 ／ <a href="mailto:watalu.9.29.2.5.yuko@gmail.com" style="text-decoration:underline;">watalu.9.29.2.5.yuko@gmail.com</a>
 </footer>
 
 <script>
 async function sharePage(){
+  const pageUrl = location.origin + location.pathname;
   const data = {
     title: document.title,
     text: '下津井中学校の同窓会を2026年12月26日（土）18:00から開催します。会場は参加人数が決まり次第決定します。出欠回答期限は9月30日です。「未定」でも回答できます。ぜひ見てください！',
-    url: location.href
+    url: pageUrl
   };
   if (navigator.share) {
     try { await navigator.share(data); } catch(e) {}
   } else {
-    const lineUrl = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(location.href);
+    const lineUrl = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(pageUrl);
     window.open(lineUrl, '_blank', 'noopener');
   }
 }
 async function copyUrl(){
+  const pageUrl = location.origin + location.pathname;
   try{
-    await navigator.clipboard.writeText(location.href);
+    await navigator.clipboard.writeText(pageUrl);
     document.getElementById('share-status').textContent = 'URLをコピーしました。LINEに貼り付けて送れます。';
   }catch(e){
     document.getElementById('share-status').textContent = 'ブラウザの共有メニューからURLをコピーしてください。';
